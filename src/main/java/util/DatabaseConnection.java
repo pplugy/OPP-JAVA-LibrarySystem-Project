@@ -29,7 +29,7 @@ public class DatabaseConnection {
         }
         return instance;
     }
-
+// SQL queries 
     private static void initialiseSchema(Connection conn) throws SQLException {
         try (Statement stmt = conn.createStatement()) {
             stmt.executeUpdate(
@@ -64,7 +64,7 @@ public class DatabaseConnection {
             seedSampleData(stmt);
         }
     }
-
+ // SQL queries for inserting data into the database 
     private static void seedSampleData(Statement stmt) throws SQLException {
         var rs = stmt.executeQuery("SELECT COUNT(*) FROM books;");
         if (rs.getInt(1) == 0) {
